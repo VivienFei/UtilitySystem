@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="power"
+  id="myeclipse.1334152672841"
+  context-root="/power"
+  j2ee-spec="5.0"
+  archive="power.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

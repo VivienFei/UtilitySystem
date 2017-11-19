@@ -1,0 +1,141 @@
+body{
+	margin:0;
+}
+/****导航css****/
+#logoid{
+margin-top:20px;
+height:80px; 
+width:270px;
+position:absolute;
+ background:url('../images/logo.png') no-repeat;
+z-index:999;
+}
+#topcontent{
+	width:960px;
+	height:100px;
+	 background: url('../images/bg-login.gif');
+	 min-width:500px;
+	 margin:0 auto;
+	
+	}
+#topmenu{
+	position:absolute;
+	height:40px;
+	background:url('../images/bg-content-box.gif');
+	bottom:0px;
+	}
+#menu {
+	height:100%;
+	padding:0;
+	margin:0 auto;
+	}
+
+#menu li{
+	 display:block;
+	  float:left;
+	  border-right:#cccccc solid 1px;
+	 font-size:14px;
+	 font-weight:bold;
+	 padding-left:20px;
+	 padding-right:20px;
+	 padding-top:10px;
+	 background-color:#00CC00;
+	 height:30px;
+	 
+	}
+	a{
+	width:100%;
+	height:100%;
+	color:#ffffff;
+	text-decoration: none;
+	}
+
+.clickli{
+	 font-size:17px;
+	background:url('../images/dlg-bg.gif') ;
+}
+#rightmenu{
+	 position:relative;
+	 height:20px;
+	 width:100px;
+	 right:0px;
+	}
+.menucontent{
+	 position:relative;
+	 float:right;
+	 width:450px;
+	height:100%;
+	}
+.rightmenu{
+height:20px; 
+width:400px;
+ position:absolute; 
+ right:0; 
+ top:0;
+ overflow:hidden;
+}
+.rightmenu ul {
+margin:0 auto;
+}
+.rightmenu ul li{
+ display:block;
+	  overflow:hidden;
+	  float:left;
+	  border-right:#cccccc solid 1px;
+	 font-size:13px;
+	 font-weight:bold;
+	 padding-left:10px;
+	 padding-right:10px;
+	 padding-top:5px;
+	 color:#ffffff;
+}
+.rightmenu a{
+	color:#ffffff;
+}
+.rightmenu a:hover{
+	color:#66FF00 ;
+}
+
+.rightlogin{
+font-size:13px;
+color:#ffffff;
+height:30px; 
+width:500px;
+ position:absolute; 
+ right:400px; 
+ top:0;
+ padding-top:5px;
+ overflow:hidden;
+}
+.showuser{
+	font-size:13px;
+	color:#ffffff;
+	height:30px; 
+	width:200px;
+ position:absolute; 
+ right:400px; 
+ top:0;
+ padding-top:5px;
+ overflow:hidden;
+ display:none;
+	}
+
+.rightlogin p{
+	margin:0;
+}
+.rightlogin .textinput{
+	width:120px;
+	}
+.butinput{
+	 background: url("../images/bg-button-green.gif") repeat-x scroll left top #459300 !important;
+    border: 1px solid #459300 !important;
+    color: #FFFFFF !important;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 13px !important;
+    padding: 0px 7px !important;
+}
+#desrtoyid{
+	cursor:pointer;
+	}

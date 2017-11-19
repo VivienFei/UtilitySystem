@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		
+		<property name="prefix" value="/page/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean id="simpleUrlHandlerMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<!-- 登陆操作 -->
+				<prop key="/login.do">loginController</prop>
+				<prop key="/changepw.do">loginController</prop>
+				<prop key="/prelogin.do">loginController</prop>
+				
+				<!-- 后台用户操作 -->
+				<prop key="/listAdmin.do">adminController</prop>
+				<prop key="/addAdmin.do">adminController</prop>
+				<prop key="/getAdmininfoForedit.do">adminController</prop>
+				<prop key="/editAdmin.do">adminController</prop>
+				<prop key="/deleteAdmin.do">adminController</prop>
+				
+				<!-- 价格管理 -->
+				<prop key="/addPriceInfo.do">moneyController</prop>
+				<prop key="/getAllMoneyInfo.do">moneyController</prop>
+				<prop key="/getMoneyEdit.do">moneyController</prop>
+				<prop key="/updatePriceInfo.do">moneyController</prop>
+				<prop key="/delMoneyInfo.do">moneyController</prop>
+				
+				<!-- 用户管理 -->
+				<prop key="/addUser.do">userController</prop>
+				<prop key="/getUserEdit.do">userController</prop>
+				<prop key="/UpdateUser.do">userController</prop>
+				<prop key="/listUser.do">userController</prop>
+				<prop key="/deleteUser.do">userController</prop>
+				<prop key="/getUserByLoginname.do">userController</prop>
+				<prop key="/showUserInfo.do">userController</prop>
+				<prop key="/getAllMoneyAndPowerInfo.do">userController</prop>
+				
+				<!-- 水费管理 -->
+				<prop key="/listWater.do">waterController</prop>
+				<prop key="/findWaterInfoByUid.do">waterController</prop>
+				<prop key="/addWater.do">waterController</prop>
+				<prop key="/getWaterfoForedit.do">waterController</prop>
+				<prop key="/editWater.do">waterController</prop>
+				<prop key="/deleteWater.do">waterController</prop>
+				<prop key="/showWaterInfo.do">waterController</prop>
+				<prop key="/reviewWaterInfo.do">waterController</prop>
+				<prop key="/exportWaterInfo.do">waterController</prop>
+				<prop key="/getWaterBeforeCount.do">waterController</prop>
+				
+				<!-- 电费管理 -->
+				<prop key="/listPower.do">powerController</prop>
+				<prop key="/findPowerInfoByUid.do">powerController</prop>
+				<prop key="/addPower.do">powerController</prop>
+				<prop key="/getPowerfoForedit.do">powerController</prop>
+				<prop key="/editPower.do">powerController</prop>
+				<prop key="/deletePower.do">powerController</prop>
+				<prop key="/showPowerInfo.do">powerController</prop>
+				<prop key="/reviewPowerInfo.do">powerController</prop>
+				<prop key="/exportPowerInfo.do">powerController</prop>
+				<prop key="/getPowerBeforeCount.do">powerController</prop>
+
+				<!-- 测试 -->
+				<prop key="/list.do">userManagerController</prop>
+				<prop key="/add.do">userManagerController</prop>
+				<prop key="/edit.do">userManagerController</prop>
+			</props>
+		</property>
+	</bean>
+	<!--==请求方法匹配实现一个文件多个模型 -->
+	<bean id="springMethodNameResolver"
+		class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+			<props>
+				
+				<!-- 登陆操作 -->
+				<prop key="/login.do">login</prop>
+				<prop key="/changepw.do">changePassword</prop>
+				<prop key="/prelogin.do">prelogin</prop>
+				<prop key="/add.do">add</prop>
+				<prop key="/edit.do">edit</prop>
+				<!-- 后台用户操作 -->
+				<prop key="/listAdmin.do">list</prop>
+				<prop key="/addAdmin.do">add</prop>
+				<prop key="/getAdmininfoForedit.do">show</prop>
+				<prop key="/editAdmin.do">update</prop>
+				<prop key="/deleteAdmin.do">delete</prop>
+				
+				<!-- 价格管理 -->
+				<prop key="/addPriceInfo.do">add</prop>
+				<prop key="/getAllMoneyInfo.do">list</prop>
+				<prop key="/getMoneyEdit.do">edit</prop>
+				<prop key="/updatePriceInfo.do">update</prop>
+				<prop key="/delMoneyInfo.do">delete</prop>
+				
+				<!-- 用户管理 -->
+				<prop key="/addUser.do">add</prop>
+				<prop key="/getUserEdit.do">show</prop>
+				<prop key="/UpdateUser.do">update</prop>
+				<prop key="/listUser.do">list</prop>
+				<prop key="/deleteUser.do">delete</prop>
+				<prop key="/getUserByLoginname.do">getInfoByLoginname</prop>
+				<prop key="/showUserInfo.do">showInfo</prop>
+				<prop key="/getAllMoneyAndPowerInfo.do">getAllInfo</prop>
+				
+			    <!-- 水费管理 -->
+				<prop key="/listWater.do">list</prop>
+				<prop key="/findWaterInfoByUid.do">findInfoByUid</prop>
+				<prop key="/addWater.do">add</prop>
+				<prop key="/getWaterfoForedit.do">show</prop>
+				<prop key="/editWater.do">update</prop>
+				<prop key="/deleteWater.do">delete</prop>
+				<prop key="/showWaterInfo.do">showInfo</prop>
+				<prop key="/reviewWaterInfo.do">review</prop>
+				<prop key="/exportWaterInfo.do">exportInfo</prop>
+				<prop key="/getWaterBeforeCount.do">getBeforeCount</prop>
+				
+				 <!-- 电费管理 -->
+				<prop key="/listPower.do">list</prop>
+				<prop key="/findPowerInfoByUid.do">findInfoByUid</prop>
+				<prop key="/addPower.do">add</prop>
+				<prop key="/getPowerfoForedit.do">show</prop>
+				<prop key="/editPower.do">update</prop>
+				<prop key="/deletePower.do">delete</prop>
+				<prop key="/showPowerInfo.do">showInfo</prop>
+				<prop key="/reviewPowerInfo.do">review</prop>
+				<prop key="/exportPowerInfo.do">exportInfo</prop>
+				<prop key="/getPowerBeforeCount.do">getBeforeCount</prop>
+				
+				
+			</props>
+		</property>
+	</bean>
+	<!-- 测试 -->
+	<bean id="userManagerController" class="com.action.UserManagerController">
+		<property name="methodNameResolver" ref="springMethodNameResolver">
+		</property>
+	</bean>
+	<!-- 登陆操作 -->
+	<bean id="loginController" class="com.action.LoginAction">
+		<property name="methodNameResolver" ref="springMethodNameResolver">
+		</property>
+	</bean>
+<!-- 后台用户操作 -->
+	<bean id="adminController" class="com.action.adminAction">
+		<property name="methodNameResolver" ref="springMethodNameResolver">
+		</property>
+	</bean>
+	
+	<!-- 价格管理 -->
+	<bean id="moneyController" class="com.action.moneyAction">
+		<property name="methodNameResolver" ref="springMethodNameResolver">
+		</property>
+	</bean>
+	
+	<!-- 用户管理 -->
+	<bean id="userController" class="com.action.userAction">
+		<property name="methodNameResolver" ref="springMethodNameResolver">
+		</property>
+	</bean>
+	
+	<!-- 水费管理 -->
+	<bean id="waterController" class="com.action.waterAction">
+		<property name="methodNameResolver" ref="springMethodNameResolver">
+		</property>
+	</bean>
+	
+	<!-- 电费管理 -->
+	<bean id="powerController" class="com.action.powerAction">
+		<property name="methodNameResolver" ref="springMethodNameResolver">
+		</property>
+	</bean>
+	
+</beans>
+
